@@ -1,0 +1,22 @@
+<div class="">
+	<h1 class="container center">Mascotas buscando hogar</h1>
+</div>
+
+<div class="row container">
+	<% @publications.each do |pet| %>
+	  <div class="col s4">
+	    <div class="card card-publication">
+	      <div class="card-image">
+	        <%= link_to image_tag(pet.photo.url), publication_path(pet), class: 'responsive-img' %>
+	        <span class="card-title"></span>
+	      </div>
+	      <div class="card-content">
+	        <h4><%=link_to pet.name, publication_path(pet) %></h4>
+	      </div>
+	      <div class="card-action">
+	        <%= link_to 'Mas Información', publication_path(pet) %>
+	      </div>
+	    </div>
+	  </div>
+	<% end %>
+</div>
